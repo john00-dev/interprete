@@ -1,0 +1,32 @@
+mut dia = 2;
+
+elegir (dia) {
+    caso 1:
+        consola.escribir('Lunes');
+        romper;
+    caso 2:
+        consola.escribir('Martes');
+        romper;
+    caso 3:
+        consola.escribir('Miércoles');
+        romper;
+    caso 4:
+        consola.escribir('Jueves');
+        romper;
+    caso 5:
+        consola.escribir('Viernes');
+        romper;
+    caso 6:
+        consola.escribir('Sábado');
+        romper;
+    caso 7:
+        consola.escribir('Domingo');
+        romper;
+    porDefecto:
+        consola.escribir('Valor no válido');
+        romper;
+}
+
+para (mut i = 0; i < 20; i = i + 1) {
+    consola.escribir(i);
+}

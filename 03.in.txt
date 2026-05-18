@@ -1,0 +1,77 @@
+mut i = 1;
+mut j = 30, k = 98.1;
+
+// ====== BUCLE ======
+mientras (i < 5) {
+    consola.escribir(i);
+    i = i + 1;
+}
+
+consola.escribir(j);
+consola.escribir(k);
+consola.error(j + k);
+
+// ====== OPERADORES LÓGICOS ======
+
+mut x = verdadero;
+const y = falso;
+
+consola.escribir("x && y: " + (x && y));   // AND
+consola.escribir("x || y: " + (x || y));   // OR
+consola.escribir("!x: " + (!x));           // NOT
+consola.escribir("!!x: " + (!!x));         // doble negación
+
+si (x && y) {
+    consola.escribir("Ambos verdaderos");
+} sino si (!!x) {
+    consola.escribir("Here working");
+} sino {
+    consola.limpiar();
+}
+
+
+// ====== OPERADORES RELACIONALES ======
+
+consola.escribir("j > 10: " + (j > 10));
+consola.escribir("j < 10: " + (j < 10));
+consola.escribir("j >= 30: " + (j >= 30));
+consola.escribir("j <= 29: " + (j <= 29));
+
+consola.escribir("k > j: " + (k > j));
+consola.escribir("k == j: " + (k == j));
+consola.escribir("k != j: " + (k != j));
+
+
+// ====== IGUALDAD (IMPORTANTE) ======
+
+consola.escribir("30 == '30': " + (30 == "30"));     // true (conversión)
+consola.escribir("30 === '30': " + (30 === "30"));   // false (estricto)
+
+
+// ====== VALORES ESPECIALES ======
+
+mut a = nulo;
+mut b = indefinido;
+mut c = Infinito;
+
+consola.escribir("a: " + a);
+consola.escribir("b: " + b);
+consola.escribir("c es infinito: " + (c == Infinito));
+
+consola.escribir("a === b: " + (a === b)); // false
+consola.escribir("a == b: " + (a == b));   // true (caso especial)
+
+
+// ====== COMBINACIONES ======
+
+consola.escribir("(j > 10 && k > 50): " + (j > 10 && k > 50));
+consola.escribir("(j < 10 || k > 50): " + (j < 10 || k > 50));
+consola.escribir("!(j > k): " + !(j > k));
+
+
+// ====== CASOS INTERESANTES ======
+
+consola.escribir("verdadero == 1: " + (verdadero == 1));
+consola.escribir("falso == 0: " + (falso == 0));
+consola.escribir("nulo == indefinido: " + (nulo == indefinido));
+consola.escribir("nulo === indefinido: " + (nulo === indefinido));

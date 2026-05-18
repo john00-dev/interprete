@@ -1,0 +1,29 @@
+// La siguiente linea de código escribe en pantalla el texto "Hola Mundo"
+
+consola.escribir("Hola Mundo")
+
+/* 
+    
+        Multilínea
+
+*/
+
+const PI = 3.1416
+    
+consola.escribir(PI)
+
+consola.escribir('mi ' + 'cadena');
+
+mut miCadena = 'alfa';
+miCadena += 'beto'; 
+
+consola.escribir(miCadena); // Muestra "alfabeto"
+
+mut edad = 20;
+
+si (edad >= 18) {
+    consola.escribir('Mayor de edad');
+} sino {
+    consola.escribir('Menor de edad');
+}
+

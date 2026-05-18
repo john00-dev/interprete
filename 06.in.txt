@@ -1,0 +1,38 @@
+// ====== FUNCIÓN (hoisting completo) ======
+
+saludo(); // funciona
+
+funcion saludo() {
+    consola.escribir("Hola desde hoisting");
+}
+
+
+// ====== VARIABLE con var (seguro) ======
+
+consola.escribir(mensaje); // indefinido
+
+var mensaje = "Hola mundo";
+
+consola.escribir(mensaje); // "Hola mundo"
+
+
+// ====== USO SEGURO CON OBJETOS ======
+
+funcion mostrarUsuario() {
+
+    si (usuario != indefinido) {
+        consola.escribir(usuario.nombre);
+    } sino {
+        consola.escribir("Usuario aún no definido");
+    }
+}
+
+
+mostrarUsuario();
+
+var usuario = {
+    nombre: "Carlos"
+};
+
+
+mostrarUsuario();

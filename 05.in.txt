@@ -1,0 +1,83 @@
+// Definición de un objeto Biblioteca
+mut Biblioteca = {
+    nombre: "Biblioteca Central",
+    libros: [],
+
+    // Método para agregar un libro
+    agregarLibro(libro) {
+        ambiente.libros.agregar(libro);
+        consola.escribir("Libro agregado: " + libro.título);
+    },
+
+    // Método para listar libros
+    listarLibros() {
+        consola.escribir("Listado de libros:");
+        para (mut i = 0; i < ambiente.libros.longitud; i++) {
+            mut libro = ambiente.libros[i];
+            consola.escribir("- " + libro.título + " (" + libro.autor + ")");
+        }
+    },
+
+    // Método para buscar libro por título
+    buscarLibro(título) {
+        para (mut i = 0; i < ambiente.libros.longitud; i++) {
+            si (ambiente.libros[i].título == título) {
+                retornar ambiente.libros[i];
+            }
+        }
+        retornar nulo;
+    }
+};
+
+// Objeto Libro (factory)
+funcion crearLibro(título, autor, año) {
+    retornar {
+        título: título,
+        autor: autor,
+        año: año,
+        disponible: verdadero,
+
+        prestar() {
+            si (ambiente.disponible) {
+                ambiente.disponible = falso;
+                consola.escribir("Libro prestado: " + ambiente.título);
+            } sino {
+                consola.escribir("El libro no está disponible");
+            }
+        },
+
+        devolver() {
+            ambiente.disponible = verdadero;
+            consola.escribir("Libro devuelto: " + ambiente.título);
+        }
+    };
+}
+
+// Crear libros
+mut libro1 = crearLibro("1984", "George Orwell", 1949);
+mut libro2 = crearLibro("El Principito", "Antoine de Saint-Exupéry", 1943);
+mut libro3 = crearLibro("Don Quijote", "Miguel de Cervantes", 1605);
+
+// Agregar libros a la biblioteca
+Biblioteca.agregarLibro(libro1);
+Biblioteca.agregarLibro(libro2);
+Biblioteca.agregarLibro(libro3);
+
+// Listar libros
+Biblioteca.listarLibros();
+
+// Buscar un libro
+mut encontrado = Biblioteca.buscarLibro("1984");
+
+si (encontrado != nulo) {
+    consola.escribir("Libro encontrado: " + encontrado.título);
+
+    // Usar métodos del objeto libro
+    encontrado.prestar();
+    encontrado.prestar(); // intentar otra vez
+    encontrado.devolver();
+}
+
+// Acceso a propiedades (dos formas)
+consola.escribir(libro1.título);
+consola.escribir(libro1["autor"]);

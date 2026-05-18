@@ -1,0 +1,84 @@
+
+// =======================
+// FUNCIONES FLECHA
+// =======================
+
+mut aNumero = (v) => Numero.interpretarDecimal(v);
+
+mut esValido = (x) => Numero.esFinito(x)
+
+mut formato = (x) => x.fijarDecimales(2);
+
+// =======================
+// NÚMEROS BASE
+// =======================
+
+mut x = aNumero("12.5");
+mut y = Numero.interpretarEntero("4");
+
+// =======================
+// USO DE TODOS LOS MÉTODOS DE Numero
+// =======================
+
+consola.escribir("esFinito:", Numero.esFinito(x));
+consola.escribir("esEntero:", Numero.esEntero(y));
+consola.escribir("esEnteroSeguro:", Numero.esEnteroSeguro(y));
+
+consola.escribir("interpretarDecimal:", Numero.interpretarDecimal("3.14"));
+consola.escribir("interpretarEntero:", Numero.interpretarEntero("10"));
+
+consola.escribir("exponencial:", x.aExponencial());
+consola.escribir("decimales:", x.fijarDecimales(3));
+consola.escribir("cadena:", x.aCadena());
+consola.escribir("valor:", x.valorDe());
+
+// =======================
+// CONSTANTES MATE (Math)
+// =======================
+
+consola.escribir("PI:", Mate.PI);
+consola.escribir("E:", Mate.E);
+consola.escribir("LN2:", Mate.LN2);
+consola.escribir("LN10:", Mate.LN10);
+consola.escribir("LOG2E:", Mate.LOG2E);
+consola.escribir("LOG10E:", Mate.LOG10E);
+
+
+// =======================
+// COMBINACIÓN FINAL CON FLECHAS
+// =======================
+
+mut esEntero = (x) => Numero.esEntero(x);
+
+consola.escribir(esEntero(10));
+consola.escribir(esEntero(10.5));
+
+mut esValido1 = (x) => Numero.esFinito(x);
+
+consola.escribir(esValido1(100)); 
+consola.escribir(esValido1(Numero.POSITIVE_INFINITY));
+
+mut formatear = (x) =>
+  Numero.interpretarDecimal(x).fijarDecimales(2);
+
+consola.escribir(formatear("3.14159"));
+
+mut promedio = (a, b, c) =>
+  (Numero.interpretarDecimal(a) +
+   Numero.interpretarDecimal(b) +
+   Numero.interpretarDecimal(c)) / 3;
+
+consola.escribir(promedio("10", "20", "30"));
+
+mut dividirSeguro = (a, b) => {
+  mut x = Numero.interpretarDecimal(a);
+  mut y = Numero.interpretarDecimal(b);
+
+  si (!Numero.esFinito(x) || !Numero.esFinito(y)) {
+    retornar "Error";
+  }
+
+  retornar x / y;
+};
+
+consola.escribir(dividirSeguro("49", "7"));
