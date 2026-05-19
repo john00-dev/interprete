@@ -9,6 +9,7 @@
 - John Jairo Páez Albino - jopaeza@unal.edu.co 
 - Juan Diego Mendoza Torres - jmendozat@unal.edu.co
 - Adrian Yebid Rincon - adrincon@unal.edu.co
+- Nael Nehuen Fontaine - nfontaine@unal.edu.co
 
 
 ---
